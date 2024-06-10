@@ -37,7 +37,7 @@ function logo (response) {
         case 'Square':
             return square.generateSquare(response);
         case 'Triangle':
-            return triangle;
+            return triangle.generateTriangle(response);
     }
 };
 
