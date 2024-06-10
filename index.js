@@ -16,7 +16,7 @@ const questions = [{
     choices: ['Circle', 'Square', 'Triangle']
     }, {
     name: 'shapeColor',
-    message: 'What do you want the color of the shape to be? (Tip: Pick a contrasting color to the color you want for the text.)',
+    message: 'What do you want the color of the shape to be? (Tip: Choose a color keyword OR hexadecimal code that includes the # symbol.)',
     response: 'string'
     }, {
     name: 'text',
@@ -24,7 +24,7 @@ const questions = [{
     response: 'string'
     }, {
     name: 'textColor',
-    message: 'What do you want the color of your characters to be? (Tip: Pick a contrasting color to the color you picked for your shape.)',
+    message: 'What do you want the color of your characters to be? (Tip: choose a color keyword OR hexadecimal code that includes the # symbol.)',
     response: 'string'
     }];
 
@@ -35,7 +35,7 @@ function logo (response) {
         case 'Circle':
             return circle.generateCircle(response);
         case 'Square':
-            return square;
+            return square.generateSquare(response);
         case 'Triangle':
             return triangle;
     }
