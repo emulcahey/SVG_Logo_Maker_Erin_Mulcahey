@@ -1,16 +1,15 @@
 //file the user will run
 var inquirer = require('inquirer');
 var fs = require('fs');
-var shapes = require('./shapes.js');
-var circle = require('./circle.js');
-var square = require('./square.js');
-var triangle = require('./triangle.js');
+// var shapes = require('./shapes.js');
+var circle = require('./lib/circle.js');
+var square = require('./lib/square.js');
+var triangle = require('./lib/triangle.js');
 
 
 // TODO: Create an array of questions for user input
 // each question should have a name, message, and response, also added tips for each question
 const questions = [{
-    }, {
     name: 'shape',
     message: 'What shape would you like to use? (Tip: Shape may decide letter placement.)',
     type: 'list',
@@ -30,25 +29,17 @@ const questions = [{
     }];
 
 //new logo object
-var logo = {
-    //function to generate logo
-    generateLogo: function (shape, shapeColor, text, textColor) {
-        //switch statement to determine which shape to generate
-        switch (shape) {
-            case 'Circle':
-                return circle.generateCircle(shapeColor) + shapes.generateSVG(text, textColor);
-            case 'Square':
-                return square.generateSquare(shapeColor) + shapes.generateSVG(text, textColor);
-            case 'Triangle':
-                return triangle.generateTriangle(shapeColor) + shapes.generateSVG(text, textColor);
-        }
+function logo (response) {
+    let logoshape = response.shape;
+    switch (logoshape) {
+        case 'Circle':
+            return circle.generateCircle(response);
+        case 'Square':
+            return square;
+        case 'Triangle':
+            return triangle;
     }
 };
-
-);
-
-
-
 
 // TODO: Create a function to write svg file
 // the function will write the file to the 'develop' folder with the file name 'logo.svg' and the data passed in
@@ -65,7 +56,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((answers) => {
         console.log(answers);
-        writeToFile('logo.svg', generateMarkdown(answers));
+        writeToFile('logo.svg', logo(answers));
     });
 }
 
