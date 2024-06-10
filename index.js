@@ -7,8 +7,8 @@ var square = require('./lib/square.js');
 var triangle = require('./lib/triangle.js');
 
 
-// TODO: Create an array of questions for user input
-// each question should have a name, message, and response, also added tips for each question
+//An array of questions for user input
+// each question has a name, message, and response, also added tips for each question
 const questions = [{
     name: 'shape',
     message: 'What shape would you like to use? (Tip: Shape may decide letter placement.)',
@@ -20,7 +20,7 @@ const questions = [{
     response: 'string'
     }, {
     name: 'text',
-    message: 'What three characters do you want your logo to show? (Tip: Enter up to three characters - spaces count.)',
+    message: 'What three characters do you want your logo to show? (Tip: Enter up to three characters -spaces count as characters.)',
     response: 'string'
     }, {
     name: 'textColor',
@@ -41,8 +41,8 @@ function logo (response) {
     }
 };
 
-// TODO: Create a function to write svg file
-// the function will write the file to the 'develop' folder with the file name 'logo.svg' and the data passed in
+// Function to write svg file
+// the function will write the file to the main repository folder with the file name 'logo.svg'.
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if(err) throw err;
@@ -50,9 +50,9 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// function will initialize app
 // the function will prompt the user with the questions array, and then log the answers to the console
-// then the function will call the writeToFile function with the file name 'logo.svg' and the generateMarkdown function with the answers
+// then the function will call the writeToFile function with the file name 'logo.svg' and the logo function with the answers
 function init() {
     inquirer.prompt(questions).then((answers) => {
         console.log(answers);
