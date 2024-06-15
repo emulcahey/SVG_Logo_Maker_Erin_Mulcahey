@@ -32,11 +32,11 @@ function logo (response) {
     let logoshape = response.shape;
     switch (logoshape) {
         case 'Circle':
-            return circle.generateCircle(response);
+            return circle.circle.generateCircle(response);
         case 'Square':
-            return square.generateSquare(response);
+            return square.square.generateSquare(response);
         case 'Triangle':
-            return triangle.generateTriangle(response);
+            return triangle.triangle.generateTriangle(response);
     }
 };
 
