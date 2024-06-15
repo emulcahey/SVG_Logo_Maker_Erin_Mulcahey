@@ -1,7 +1,6 @@
 //file the user will run
 var inquirer = require('inquirer');
 var fs = require('fs');
-// var shapes = require('./shapes.js');
 var circle = require('./lib/circle.js');
 var square = require('./lib/square.js');
 var triangle = require('./lib/triangle.js');
