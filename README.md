@@ -16,7 +16,7 @@ A user can use this program to help them create a logo for their own project. Us
 ![Image of the generated logo after completing the questions.](images/exampleScreenShotSquare.png)
 ![Image of the newly created ReadMe.](images/newFile.png)
 
-Walkthrough Video: URL LINK
+Walkthrough Video: [Link to the SVG Logo Maker walk-through video](https://drive.google.com/file/d/1Ao8uft_WTRjRoYt1vpsuLgMhh8qdX8MN/view)
 
 ## Credits
 
